@@ -47,6 +47,8 @@ const mutation = new GraphQLObjectType({
               fullName: {type: GraphQLID},
           },
           resolve(parent,args){
+            console.log('addUsers resolver called');
+            console.log('Received data:', args);
               return Users.create({fullName: args.fullName ,phoneNumber: args.phoneNumber,password:args.password})
           }
                 },
